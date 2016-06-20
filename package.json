@@ -1,0 +1,30 @@
+{
+  "name": "content_filter",
+  "version": "1.0.0",
+  "description": "a simple content filter plugin for Jquery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iammvp/contentFilter.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "list-filter",
+    "content-filter"
+  ],
+  "author": "Mi Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iammvp/contentFilter/issues"
+  },
+  "homepage": "https://github.com/iammvp/contentFilter#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3"
+  }
+}

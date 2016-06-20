@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery九宫格大转盘抽奖代码 - 站长素材</title>
+
+<style type="text/css">
+#lottery{width:574px;height:584px;margin:20px auto 0;background:url(images/bg.jpg) no-repeat;padding:50px 55px;}
+#lottery table td{width:142px;height:142px;text-align:center;vertical-align:middle;font-size:24px;color:#333;font-index:-999}
+#lottery table td a{width:284px;height:284px;line-height:150px;display:block;text-decoration:none;}
+#lottery table td.active{background-color:#ea0000;}
+</style>
+
+</head>
+<body>
+
+<div id="lottery">
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="lottery-unit lottery-unit-0"><img src="images/1.png"></td>
+			<td class="lottery-unit lottery-unit-1"><img src="images/2.png"></td>
+			<td class="lottery-unit lottery-unit-2"><img src="images/4.png"></td>
+            <td class="lottery-unit lottery-unit-3"><img src="images/3.png"></td>
+		</tr>
+		<tr>
+			<td class="lottery-unit lottery-unit-11"><img src="images/7.png"></td>
+			<td colspan="2" rowspan="2"><a href="#"></a></td>
+			<td class="lottery-unit lottery-unit-4"><img src="images/5.png"></td>
+		</tr>
+		<tr>
+			<td class="lottery-unit lottery-unit-10"><img src="images/1.png"></td>
+			<td class="lottery-unit lottery-unit-5"><img src="images/6.png"></td>
+		</tr>
+        <tr>
+			<td class="lottery-unit lottery-unit-9"><img src="images/3.png"></td>
+			<td class="lottery-unit lottery-unit-8"><img src="images/6.png"></td>
+			<td class="lottery-unit lottery-unit-7"><img src="images/8.png"></td>
+            <td class="lottery-unit lottery-unit-6"><img src="images/7.png"></td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../dist/lottery.js"></script>
+<script type="text/javascript">
+	$('#lottery td a').click(function t (event) {
+		event.preventDefault();
+		$('table').lottery({
+			'clickSelector' : $('#lottery td a'),
+			'prizeSelector' : '.lottery-unit',
+			'speed': 100,
+			'end':5,
+			'round': 2,
+			'active': 'active',
+			'event': t
+
+		});
+	});
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</body>
+</html>
