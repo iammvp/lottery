@@ -1,14 +1,14 @@
 {
-  "name": "content_filter",
+  "name": "lottery",
   "version": "1.0.0",
-  "description": "a simple content filter plugin for Jquery",
+  "description": "a simple lottery plugin for Jquery",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iammvp/contentFilter.git"
+    "url": "git+https://github.com/iammvp/lottery.git"
   },
   "keywords": [
     "jquery-plugin",
@@ -18,9 +18,9 @@
   "author": "Mi Li",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iammvp/contentFilter/issues"
+    "url": "https://github.com/iammvp/lottery/issues"
   },
-  "homepage": "https://github.com/iammvp/contentFilter#readme",
+  "homepage": "https://github.com/iammvp/lottery#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
