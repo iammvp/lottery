@@ -19,7 +19,7 @@
         /*初始化*/
         function init() {
             settings.index = settings.continue ? getStart() : settings.start, //当前指向哪个奖品
-            settings.end = options.end ? (options.end > $that.find(options.prizeClass).length - 1 ? Math.floor(Math.random() * $that.find(options.prizeClass).length) : options.end) : Math.floor(Math.random() * $that.find(options.prizeClass).length), //哪儿结束    
+            settings.end = options.end >= 0 ? (options.end > $that.find(options.prizeClass).length - 1 ? Math.floor(Math.random() * $that.find(options.prizeClass).length) : options.end) : Math.floor(Math.random() * $that.find(options.prizeClass).length), //哪儿结束    
             $(settings.clickSelector).unbind('click', settings.event); //解除click事件,在抽奖动画完成前,不能再点击
             $that.find(settings.prizeClass + '-' + settings.index).removeClass(settings.activeClass + ' ' + settings.goalClass); //每次开始前清除所有添加的class
             initRound = timer();
@@ -61,12 +61,14 @@
 	                clearInterval(initRound);
 	                settings.speed = settings.speed + 50;
 	                secondLastRound = timer();
-	            } else if (count == settings.amount * settings.round) { //最后一圈速度更慢
+	            } 
+	            if (count == settings.amount * settings.round) { //最后一圈速度更慢
 	                clearInterval(secondLastRound);
 	                settings.speed = settings.speed + 100;
 	                lastRound = timer();
 
-	            } else if (count >= settings.amount * settings.round + settings.end) { //结束
+	            }  
+	            if (count == settings.amount * settings.round + settings.end) { //结束
 	                clearInterval(lastRound);
 	                $that.find(settings.prizeClass + '-' + settings.index).addClass(settings.goalClass);
 	                $(settings.clickSelector).bind('click', settings.event); //重新绑定click事件
