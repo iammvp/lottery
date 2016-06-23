@@ -18,8 +18,9 @@
             initRound, secondLastRound, lastRound; //三个状态,为了修改speed
         /*初始化*/
         function init() {
-            settings.index = settings.continue ? getStart() : settings.start, //当前指向哪个奖品
-            settings.end = options.end >= 0 ? (options.end > $that.find(options.prizeClass).length - 1 ? Math.floor(Math.random() * $that.find(options.prizeClass).length) : options.end) : Math.floor(Math.random() * $that.find(options.prizeClass).length), //哪儿结束    
+            settings.index = settings.continue ? getStart() : settings.start; //当前指向哪个奖品
+            settings.round = options.round < 2 ? 2 : options.round; //最少两圈
+            settings.end = options.end >= 0 ? (options.end > $that.find(options.prizeClass).length - 1 ? Math.floor(Math.random() * $that.find(options.prizeClass).length) : options.end) : Math.floor(Math.random() * $that.find(options.prizeClass).length); //哪儿结束    
             $(settings.clickSelector).unbind('click', settings.event); //解除click事件,在抽奖动画完成前,不能再点击
             $that.find(settings.prizeClass + '-' + settings.index).removeClass(settings.activeClass + ' ' + settings.goalClass); //每次开始前清除所有添加的class
             initRound = timer();
